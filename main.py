@@ -99,6 +99,28 @@ dane.drop('Residence_type', axis='columns', inplace=True)
 dane.drop('ever_married', axis='columns', inplace=True)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # przetrzymuje informacje o neuronku:
 class Connection:
     def __init__(self, connectedNeuron):
@@ -235,7 +257,7 @@ while True:
         net.backPropagate(outputs[i])
         err = err + net.getError(outputs[i])
     print("error: ", err)
-    if err < 0.91:
+    if err < 0.91:  # TUTAJ BYŁO 0.01, ALE ZMIENIŁAM, ŻEBY DAŁO SIĘ SZYBCIEJ SPRAWDZAĆ, JAK TO DZIAŁA :)
         break
 
 while True:
