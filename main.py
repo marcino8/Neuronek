@@ -268,7 +268,7 @@ class Network:
         return output
 
 
-topology = []
+topology = []  # =architektura
 # ustalanie ilości neuronków w każdej kolejnej warstwie:
 topology.append(2)
 topology.append(3)
@@ -302,8 +302,8 @@ while True:
 
 # podsumowując, czego zauważyłam, że na pewno brakuje:
 # Ustalania współczynników eta i alfa konkretnym wzorem, nie na sztywno.
-# Nie podzielili zbioru input na zbiory uczący, walidacyjny i testowy, my musimy to zrobić.
-# Nie sprawdzili na samym końcu jak sieć zachowuje się na zbiorze walidacyjnym i testowym,
+# Nie podzielili zbioru input na zbiory uczący i testowy, my musimy to zrobić.
+# Nie sprawdzili na samym końcu jak sieć zachowuje się na zbiorze testowym,
 # my możemy przy okazji robienia tego wypluć jakieś wykresy do raportu.
 # Zmiana struktury sieci będzie z podobnym kodem banalna, więc jeśli napiszemy sobie wykresy do tego
 # i różne "testowe" rzeczy, to później tylko kopiuj wklej wyników do raportu i jakieś super wnioski bazujące
