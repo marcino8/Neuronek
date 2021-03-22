@@ -278,10 +278,13 @@ net = Network(topology)  # tworzenie sieci z zadanymi parametrami
 Neuron.eta = 0.09
 Neuron.alpha = 0.015
 inputs = [[0, 0], [0, 1], [1, 0], [1, 1]]
+# inputs = dane.drop('stroke', axis='columns', inplace=True)
+# outputs = dane('stroke')  # nie wiem czy dobre xD
 outputs = [[0, 0], [1, 0], [1, 0], [0, 1]]
 
 while True:
     err = 0
+    # dopisac tutaj mieszanie danych
     for i in range(len(inputs)):
         # wg tego co czytałam, dla każdej iteracji powinnyśmy mieszać dane, tu tego nie ma:
         net.setInput(inputs[i])
@@ -318,32 +321,32 @@ while True:
 
 
 
-'''
-mapper = {'children': 0, 'Private': 1, 'Self-employed': 2, 'Govt_job': 3, 'Never_worked': 4}
-dane.loc[:, 'work_type'] = dane.loc[:, 'work_type'].replace(mapper)
 
-mapper2 = {'Male': 0, 'Female': 1, 'Other': 2}
-dane.loc[:, 'gender'] = dane.loc[:, 'gender'].replace(mapper2)
+#mapper = {'children': 0, 'Private': 1, 'Self-employed': 2, 'Govt_job': 3, 'Never_worked': 4}
+#dane.loc[:, 'work_type'] = dane.loc[:, 'work_type'].replace(mapper)
 
-mapper3 = {'No': 0, 'Yes': 1}
-dane.loc[:, 'ever_married'] = dane.loc[:, 'ever_married'].replace(mapper3)
+#mapper2 = {'Male': 0, 'Female': 1, 'Other': 2}
+#dane.loc[:, 'gender'] = dane.loc[:, 'gender'].replace(mapper2)
 
-mapper4 = {'Rural': 0, 'Urban': 1}
-dane.loc[:, 'Residence_type'] = dane.loc[:, 'Residence_type'].replace(mapper4)
+#mapper3 = {'No': 0, 'Yes': 1}
+#dane.loc[:, 'ever_married'] = dane.loc[:, 'ever_married'].replace(mapper3)
+
+#mapper4 = {'Rural': 0, 'Urban': 1}
+#dane.loc[:, 'Residence_type'] = dane.loc[:, 'Residence_type'].replace(mapper4)
 
 # ZAPYTAĆ O TO !!!
-mapper5 = {'formerly smoked': 0, 'never smoked': 1, 'smokes': 2, 'Unknown': 3}
-dane.loc[:, 'smoking_status'] = dane.loc[:, 'smoking_status'].replace(mapper5)
+#mapper5 = {'formerly smoked': 0, 'never smoked': 1, 'smokes': 2, 'Unknown': 3}
+#dane.loc[:, 'smoking_status'] = dane.loc[:, 'smoking_status'].replace(mapper5)
 
-mask = dane['work_type'].str.startswith('c')
-dane.loc[mask, 'work_type'] = 0
+#mask = dane['work_type'].str.startswith('c')
+#dane.loc[mask, 'work_type'] = 0
 
-mask = dane['work_type'].str.startswith('P')
-dane.loc[mask, 'work_type'] = 1
+#mask = dane['work_type'].str.startswith('P')
+#dane.loc[mask, 'work_type'] = 1
 
-mask = dane['work_type'].str.startswith('S')
-dane.loc[mask, 'work_type'] = 0
-'''
+#mask = dane['work_type'].str.startswith('S')
+#dane.loc[mask, 'work_type'] = 0
+
 
 
 
